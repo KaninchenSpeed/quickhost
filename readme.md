@@ -1,33 +1,48 @@
-## Requirements
+## A qick hosting package
 
-- make sure nodejs and npm (normally included with nodejs) are installed
-- install @types/node globally `npm i -g -D @types/node`
+```bash
+npm i -g quickhost
+```
 
+```bash
+quickhost --port <your port>
+```
 
-## Get Started
+## Features
+- https support
+- auto https redirects
+- index file overrides
+- root path overrides
 
-### with Git installed
+## Arguments
 
-- run `git clone https://github.com/KaninchenSpeed/empty_typescript_project.git` to clone the project
-- rename the directory to your project name
-- run `npm i` in the project directory to install all dependencies
+### `--port <port>`
+sets the port of the http server
 
+### `--httpsPort <port>`
+sets the port of the https server
 
-### without git
+### `--cert <ABSOLUTE path to cert file>` (https only)
+sets the ABSOLUTE path to the certificate file
 
-- click on the green code button on the top right of the page
-- click on download zip
-- extract the zip where you want the project to be
-- rename the directory to your project name
-- run `npm i` in the project directory to install all dependencies
+### `--key <ABSOLUTE path to private key file>` (https only)
+sets the ABSOLUTE path to the private key file
 
-### Notes
+### `--httpRedirect <target url>`
+replaces the http server with a server which redirects all users to the specified url
 
-The source code files are in the src directory.
+### `--onlyHttps true`
+disables the http server. This does NOT disable the redirect server!
 
-Put config in the directory called `config` as it is ignored by the auto restart.
+### `--root <RELATIVE path to webroot directory>`
+sets the root directory of the web serever.
 
-#### Scripts
-- run `npm run dev` to start your application in dev mode (with auto restart on file save)
-- run `npm run build` to compile your project to plain js (found in the dist directory)
-- run `npm run start` to run node on the compiled js files
+**This is RELATIVE to the current woring directory!**
+
+### `--index <RELATIVE path from webroot to index.html>`
+set the file to get send on "/".
+
+**This is RELATIVE to the webroot directory specified with `--root` or the current working directory!**
+
+## Additional Info
+This package uses express and https. It starts a http1.1 server (http2 support coming soon).
