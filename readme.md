@@ -1,4 +1,4 @@
-## A qick hosting package
+## A quick hosting package
 
 ```bash
 npm i -g quickhost
