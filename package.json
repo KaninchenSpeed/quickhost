@@ -1,6 +1,6 @@
 {
-  "name": "quickhost",
-  "version": "1.0.0",
+  "name": "@kaninchenspeed/quickhost",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/main.js",
   "scripts": {
@@ -13,7 +13,7 @@
   "keywords": [],
   "bin": "bin/run.js",
   "author": "KaninchenSpeed",
-  "license": "",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@types/express": "^4.17.13",
     "@types/yargs-parser": "^21.0.0",
